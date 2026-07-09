@@ -1,13 +1,13 @@
-const BASE_API = "http://192.168.68.12";
+const BASE_API = "http://192.168.193.74";
 const WORKFLOWS_API_PATH = "/v1/workflows/run";
 const CHAT_API_PATH = "/v1/chat-messages"; // Added missing constant
 
-const SQL_AUTH_TOKEN = "Bearer app-ywDAQwqYjDjAIzEY56DMbK9F";
-const DD_AUTH_TOKEN = "Bearer app-MxLJNj5TZL8cZcIU3b3rOm1J";
-const LP_AUTH_TOKEN = "Bearer app-MNPZP72tn1KwDDsgZGWAFvdj";
-const LA_AUTH_TOKEN = "Bearer app-u4gSg0k8D71BVUqo5fZW7rHT";
-const AL_AUTH_TOKEN = "Bearer app-6Ki4AAWMvVcsuuMxX8cIioUM";
-const AI_CHAT_TOKEN = "Bearer app-hYaCZvAH9qpL2CFvdTJkBlry"
+const SQL_AUTH_TOKEN = "Bearer app-3RbWYXRPhyiJ0AkMe5Dmf1bS";
+const DD_AUTH_TOKEN = "Bearer app-kMAh7zylRUhQtEgwqTnckTnx";
+const LP_AUTH_TOKEN = "Bearer app-ECUAmINoqQVwUAM8X0Far60l";
+const LA_AUTH_TOKEN = "Bearer app-Gr3YnYuT6uSvspSwEbwtXpsE";
+const AL_AUTH_TOKEN = "Bearer app-cSd9WpV6YBjpTkTfxy20ri1T";
+const AI_CHAT_TOKEN = "Bearer app-1NlS9WkVpN01ZCrUfFq3bRRO"
 
 async function fetchWorkflowData(inputs, userId, AUTH_TOKEN) {
     try {
@@ -54,9 +54,60 @@ async function fetchWorkflowData(inputs, userId, AUTH_TOKEN) {
 async function fetchDiabetesDetectionWorkflow(inputs, userId) {
     return await fetchWorkflowData(inputs, userId, DD_AUTH_TOKEN);
 }
-// Text2sql工作流函数
+// Text2sql工作流函数(AI智能管理助手为Agent类型，使用chat-messages API)
 async function fetchSQLWorkflow(intention, userId) {
-    return await fetchWorkflowData({ intention: intention }, userId, SQL_AUTH_TOKEN);
+    try {
+        const headers = new Headers({
+            "Authorization": SQL_AUTH_TOKEN,
+            "Content-Type": "application/json"
+        });
+
+        const response = await fetch(`${BASE_API}${CHAT_API_PATH}`, {
+            method: 'POST',
+            headers: headers,
+            body: JSON.stringify({
+                inputs: { intention: intention },
+                query: intention,
+                response_mode: "streaming",
+                user: userId
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder();
+        let resultStr = ''
+        while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
+            
+            const chunk = decoder.decode(value, { stream: true }).replace("event: ping","");
+            const chunks = chunk.split('data: ');
+            chunks.forEach((ck) => {
+                try {
+                    const data = JSON.parse(ck);
+                    if(data.answer){
+                        resultStr += data.answer;
+                    }
+                }catch (error) {
+                }
+            })
+        }
+        // 尝试将AI返回的JSON字符串解析为对象
+        try {
+            return JSON.parse(resultStr);
+        } catch (e) {
+            // 如果不是JSON格式，返回包含result的对象
+            return { result: resultStr };
+        }
+
+    } catch (error) {
+        console.error('请求处理失败:', error);
+        throw new Error(`数据处理失败: ${error.message}`);
+    }
 }
 // 生活方案定制
 async function fetchLifePlansWorkflow(inputs, userId) {
