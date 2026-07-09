@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打卡记录</title>
+    <script src="/js/tailwindcss.js"></script>
+    <script src="/js/api.js"></script>
+    <script src="/js/user.js"></script>
+    <script src="/js/loading.js"></script>
+    <script src="js/checkcardList.js"></script>
+
+    <link rel="stylesheet" href="/css/all.min.css">
+    <link rel="stylesheet" href="/css/loading.css">
+    <link rel="stylesheet" href="css/checkcardList.css">
+</head>
+
+<body class="bg-gray-50 font-sans">
+    <!-- 顶部导航栏 -->
+    <header class="fixed top-0 left-0 right-0 z-10 shadow-sm bg-white">
+        <div class="flex items-center justify-between px-6 py-3">
+            <button style="margin-right: 50px;" onclick="window.history.back()">
+                <i class="fas fa-chevron-left text-lg"></i>
+            </button>
+            <h1 class="text-lg font-medium">打卡记录</h1>
+            <button onclick="window.location.href='AIAnalysis.html'">
+                打卡分析
+            </button>
+        </div>
+    </header>
+    <!-- 主要内容区 -->
+    <main class="pt-16 pb-24 px-4">
+        <!-- 日期选择区 -->
+        <div class="mb-6 overflow-x-auto">
+            <div class="flex space-x-2 pb-2" style="width: max-content;">
+                <div id="date-container" class="flex space-x-2 pb-2" style="width: max-content;"></div>
+            </div>
+        </div>
+        <!-- 数据概览卡片 -->
+        <h2 class="text-lg font-medium text-gray-800">今日打卡记录</h2>
+        <div id="cardList">
+            <div class="bg-white rounded-xl shadow-md p-8 mx-1 mt-6 card">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-lg font-medium text-gray-800">饮食打卡</h2>
+                </div>
+                <div class="flex items-center justify-between p-3 rounded-lg border border-gray-100">
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center mr-3">
+                            <img src="/img/card_eat.png" width="42" height="31"/>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-medium text-gray-800">今日饮食</h3>
+                            <p class="text-xs text-gray-500">健康饮食打卡</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="btn">已达成</span>
+                        <i class="fas fa-chevron-right text-gray-400 w-4 h-4"></i>
+                    </div>
+                </div>
+                <div class="show-text">
+                    主要食用无糖水果200g，杂粮100g
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow-md p-8 mx-1 mt-6 card">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-lg font-medium text-gray-800">运动打卡</h2>
+                </div>
+                <div class="flex items-center justify-between p-3 rounded-lg border border-gray-100">
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center mr-3">
+                            <img src="/img/card_eat.png" width="42" height="31"/>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-medium text-gray-800">今日运动</h3>
+                            <p class="text-xs text-gray-500">健康运动打卡</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="btn">已达成</span>
+                        <i class="fas fa-chevron-right text-gray-400 w-4 h-4"></i>
+                    </div>
+                </div>
+                <div class="show-text">
+                    今晚完成慢跑5公里
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

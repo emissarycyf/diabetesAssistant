@@ -1,0 +1,45 @@
+.message-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 9999px;
+    border: 2px solid #304FFF;
+}
+.doctor-avatar {
+    width: 54px;
+    height: 54px;
+    border-radius: 9999px;
+    border: 2px solid #304FFF;
+}
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 9999px;
+}
+.chat-bubble {
+    max-width: 280px;
+}
+.input-container {
+    min-height: 48px;
+}
+.send-btn {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#messages-container{
+    margin-bottom: 65px;
+}
+.msg {
+    white-space: pre-line;
+    padding: 5px;
+}
+details{
+    padding-bottom: 2px;
+}

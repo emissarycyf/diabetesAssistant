@@ -1,0 +1,29 @@
+body {
+    background: #F3F8FC;
+}
+
+.nav-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.img-container {
+    margin: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+
+}
+
+section {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    color: #999999;
+}
+
+section h2 {
+    color: #0A1629;
+    border-bottom: 1px dashed #999999;
+    font-weight: 600;
+    padding-bottom: 6px;
+}

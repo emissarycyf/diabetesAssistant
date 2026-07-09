@@ -1,0 +1,36 @@
+.rounded-button {
+    border-radius: 4px !important;
+}
+
+i {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.chart-container {
+    width: 100%;
+    height: 30vh;
+    min-height: 200px;
+}
+.message{
+    color:#8C8C8C ;
+}
+.title {
+    font-size: 22px;
+    font-weight: 800;
+    border-bottom: 1px dashed #e5e7eb;
+    padding-bottom: 8px;
+}
+.show-process-text{
+    color: #8C8C8C;
+    padding-top: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+/* Progress circle animation */
+.progress-circle {
+    transition: stroke-dashoffset 0.5s ease-in-out;
+}

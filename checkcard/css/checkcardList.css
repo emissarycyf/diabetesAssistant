@@ -1,0 +1,157 @@
+@media (max-width: 640px) {
+    nav {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+
+    nav h1 {
+        font-size: 1rem;
+    }
+
+    nav button {
+        padding: 12px;
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    .date-item {
+        min-width: 44px;
+        padding: 8px 0;
+        font-size: 0.75rem;
+    }
+
+    .bg-white {
+        margin-left: -12px;
+        margin-right: -12px;
+        border-radius: 0;
+    }
+
+    main {
+        padding-top: 12px;
+        padding-bottom: 80px;
+    }
+
+    .w-16,
+    .h-16 {
+        width: 48px;
+        height: 48px;
+    }
+
+    .text-lg {
+        font-size: 1rem;
+    }
+
+    .text-sm {
+        font-size: 0.875rem;
+    }
+
+    .px-4 {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .py-3 {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    /* 优化日期选择器滚动 */
+    .mb-6.overflow-x-auto {
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* 优化卡片内容间距 */
+    .bg-white.rounded-xl {
+        padding: 12px;
+    }
+
+    /* 增大触摸区域 */
+    .flex.items-center.justify-between.p-3.rounded-lg {
+        padding: 12px;
+    }
+
+    /* 优化状态标签 */
+    .text-xs.px-6.py-2 {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+}
+
+/* 添加中等尺寸屏幕适配 */
+@media (min-width: 641px) and (max-width: 1024px) {
+    .date-item {
+        min-width: 56px;
+        padding: 12px 0;
+    }
+
+    .bg-white.rounded-xl {
+        padding: 16px;
+    }
+}
+
+/* 添加大屏幕适配 */
+@media (min-width: 1025px) {
+    .date-item {
+        min-width: 64px;
+        padding: 16px 0;
+    }
+
+    .bg-white.rounded-xl {
+        padding: 20px;
+    }
+
+    /* 限制最大宽度 */
+    nav.max-w-md,
+    main {
+        max-width: 1024px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.date-item.active {
+    background-color: #304FFF;
+    color: white;
+}
+
+.card {
+    background-image: url('/img/card_bg.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.btn {
+    background-color: #D6DCFF;
+    font-size: small;
+    color: #304FFF;
+    padding: 6px 18px;
+    border-radius: 18px;
+    margin: 2px;
+    margin-right: 10px;
+
+}
+
+.show-text {
+    background-color: #EEF0FF;
+    color: #304FFF;
+    padding: 8px 18px;
+    border-radius: 18px;
+    margin-top: 16px;
+    font-size: 12px;
+    border-radius: 5px;
+
+}
+
+.progress-ring {
+    transform: rotate(-90deg);
+}
+
+.progress-ring-circle {
+    transition: stroke-dashoffset 0.5s;
+}
+
+i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

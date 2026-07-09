@@ -1,0 +1,73 @@
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.number-input {
+    position: relative;
+    width: 120px;
+}
+
+.number-input input {
+    width: 100%;
+    padding-right: 60px;
+}
+
+.number-controls {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.number-controls button {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    transition: all 0.2s;
+}
+
+.number-controls button:hover {
+    background-color: #e5e7eb;
+}
+
+.number-controls button:first-child {
+    border-top-right-radius: 4px;
+}
+
+.number-controls button:last-child {
+    border-bottom-right-radius: 4px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    transition: transform 0.3s ease;
+}
+
+input {
+    width: 30%;
+    border: none;
+    /* 去除默认边框 */
+    outline: none;
+    /* 去除聚焦时的外边框 */
+}
+
+label {
+    padding-left: 10px;
+    padding-top: 6px;
+}
+h2 {
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 10px;
+}

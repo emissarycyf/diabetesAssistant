@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人信息收集</title>
+    <script src="/js/tailwindcss.js"></script>
+    <link rel="stylesheet" href="/css/all.min.css">
+    <script>
+
+    </script>
+    <script src="/js/user.js"></script>
+    <script src="/js/api.js"></script>
+    <script src="/js/loading.js"></script>
+    <script src="js/userinfo.js"></script>
+    <link rel="stylesheet" href="/css/loading.css">
+    <link rel="stylesheet" href="css/userinfo.css">
+</head>
+
+<body class="min-h-[1024px] bg-[#F3F8FC]">
+    <div class="flex flex-col h-screen">
+        <!-- 顶部导航栏 -->
+        <header class="shadow-sm bg-white">
+            <div class="flex items-center justify-between px-4 py-3">
+                <button onclick="window.history.back()">
+                    <i class="fas fa-chevron-left text-lg"></i>
+                </button>
+                <h1 class="text-lg font-bold ">个人信息</h1>
+                <button onclick="window.location.replace('diabetesinfo.html')">
+                    修改信息
+                </button>
+            </div>
+
+        </header>
+        <div id="userInfo" class="space-y-6">
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md mt-6 mx-6 mb-4">
+                <h3 class="text-lg font-bold text-gray-900 mb-4 pb-2 border-b border-dashed border-gray-300">基本信息</h3>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="text-gray-500 w-20">年龄:</span>
+                        <span id="userAge" class="text-gray-900 text-right"></span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-gray-500 w-20">性别:</span>
+                        <span id="userGender" class="text-gray-900 text-right"></span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-gray-500 w-20">家族病史:</span>
+                        <span id="familyHistory" class="text-gray-900 text-right"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md mt-6 mx-6 mb-4">
+                <h3 class="text-lg font-bold text-gray-900 mb-4 pb-2 border-b border-dashed border-gray-300">身体数据</h3>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="text-gray-500 w-20">身高(cm):</span>
+                        <span id="height" class="text-gray-900 text-right"></span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-gray-500 w-20">体重(kg):</span>
+                        <span id="weight" class="text-gray-900 text-right"></span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-gray-500 w-20">腰围(cm):</span>
+                        <span id="waistline" class="text-gray-900 text-right"></span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-gray-500 w-32">收缩压(mmHg):</span>
+                        <span id="systolicPressure" class="text-gray-900 text-right"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md mt-6 mx-6 mb-4">
+                <h3 class="text-lg font-bold text-gray-900 mb-4 pb-2 border-b border-dashed border-gray-300">糖尿病病情</h3>
+                <div class="space-y-4">
+                    <div class="flex items-center">
+                        <span class="text-gray-500 w-20">患病情况</span>
+                        <span id="disease" class="text-gray-900 text-right"></span>
+                    </div>
+                    <div class="mb-2">
+                        <div class="text-gray-500">风险及建议</div>
+                        <div id="message" class="text-gray-900 mt-1"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

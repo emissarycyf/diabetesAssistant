@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f8fafc;
+}
+
+/* 自定义主题色 */
+:root {
+    --primary-color: #2563eb;
+}
+
+.text-primary {
+    color: var(--primary-color);
+}
+
+.border-primary {
+    border-color: var(--primary-color);
+}
+
+.bg-primary {
+    background-color: var(--primary-color);
+}
+
+.nav-bar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.content-area {
+    padding-top: 4px;
+    padding-bottom: 10px;
+}
+
+.lb {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.btn {
+    border: 1px solid #304FFF;
+    border-radius: 4px;
+    width: 60px;
+}
+
+.doctor-card {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.article-item {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.category-item {
+    transition: all 0.2s ease;
+}
+
+.category-item:hover {
+    transform: translateY(-2px);
+}
+
+i.fa-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+}
+.swiper {
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+}

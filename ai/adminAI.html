@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 智能管理</title>
+    <script src="/js/tailwindcss.js"></script>
+    <script src="/js/api.js"></script>
+    <script src="/js/user.js"></script>
+    <script src="/js/sweetalert2.all.min.js"></script>
+    <script src="/js/loading.js"></script>
+    <link rel="stylesheet" href="/css/all.min.css">
+    <link rel="stylesheet" href="/css/loading.css">
+    <script src="js/adminAI.js"></script>
+    <link rel="stylesheet" href="css/adminAI.css">
+</head>
+
+<body class="w-full min-h-screen mx-auto relative">
+    <!-- 顶部导航栏 -->
+    <header class="fixed top-0 left-0 right-0 z-10 shadow-sm bg-white">
+        <div class="flex items-center justify-between px-4 py-3">
+            <button onclick="window.history.back()">
+                <i class="fas fa-chevron-left text-lg"></i>
+            </button>
+            <h1 class="text-lg font-medium">AI智能管理平台</h1>
+            <button id="clearChatBtn">
+                <i class="fa-regular fa-circle-question text-lg"></i>
+
+
+            </button>
+        </div>
+    </header>
+    <main class="pt-[72px] px-4 w-full max-w-md mx-auto">
+        <div class="mb-2">
+            <div class="relative">
+                <input type="text" placeholder="请输入操作指令"
+                    class="w-full h-[48px] bg-white rounded-lg p-4 text-sm border-none input-shadow">
+                <button id="btn" class="absolute right-4 top-1/2 transform -translate-y-1/2">
+                    <i class="fas fa-search text-gray-400"></i>
+                </button>
+            </div>
+        </div>
+        <div class="space-y-4">
+            <div class="bg-white p-4 rounded-lg card-shadow">
+                <h3 class="text-base font-medium mb-3">执行结果</h3>
+                <div class="space-y-3">
+                    <div class="flex items-center space-x-2">
+                        <span class="text-sm text-gray-600">状态：</span>
+                        <span class="text-sm text-gray-800" id="status"></span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-sm text-gray-600">操作：</span>
+                        <span class="text-sm text-gray-800" id="message"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white p-4 rounded-lg card-shadow">
+                <h3 class="text-base font-medium mb-3">数据概览</h3>
+                <div class="overflow-x-auto w-full" id="dataTableContainer">
+                </div>
+            </div>
+            <div class="bg-white p-4 rounded-lg card-shadow">
+                <h3 class="text-base font-medium mb-3">操作日志</h3>
+                <div class="space-y-3">
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

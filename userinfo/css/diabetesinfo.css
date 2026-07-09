@@ -1,0 +1,13 @@
+        /* 自定义下拉菜单样式 */
+        select::-ms-expand {
+            display: none;
+        }
+
+        #diabetesStatus {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+
+        #diabetesStatus:hover+div .fa-chevron-right {
+            color: #4A90E2;
+        }

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>填写个人信息</title>
+    <script src="/js/tailwindcss.js"></script>
+    <link rel="stylesheet" href="/css/all.min.css">
+    <script src="/js/user.js"></script>
+    <script src="/js/api.js"></script>
+    <script src="/js/loading.js"></script>
+    <link rel="stylesheet" href="/css/loading.css">
+    <link rel="stylesheet" href="css/informationGathering.css">
+    <script src="js/informationGathering.js"></script>
+</head>
+
+<body class="min-h-[1024px] bg-gradient-to-br from-blue-50 via-gray-50 to-indigo-50">
+    <nav class="top-0 w-full bg-white text-black border-b border-gray-200 shadow-md px-4 py-4 flex items-center z-50">
+        <button class="text-black">
+            <i class="fas fa-arrow-left text-xl w-6 h-6 flex items-center justify-center"></i>
+        </button>
+        <h1 class="text-black text-xl font-bold flex-1 text-center">填写个人信息</h1>
+        <div class="w-6"></div>
+    </nav>
+    <p class="text-gray-600 m-2 border-l-4 pl-4">带 <span class="text-red-500">*</span> 为必填项。</p>
+    <form id="personalInfoForm" class="space-y-6">
+        <div class="space-y-8">
+            <div class="border-b card">
+                <h2 class="text-xl font-semibold text-black mb-6 flex items-center">
+                    基本信息
+                </h2>
+                <div class="grid gap-6 md:grid-cols-2">
+                    <div class="flex items-center justify-between">
+                        <span class="w-20">年龄:<span class="text-red-500">*</span></span>
+                        <input name="age" type="number" width="60" required
+                            class="border border-gray-300 rounded-button px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                            placeholder="请输入">
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="w-20">性别:<span class="text-red-500">*</span></span>
+                        <div class="flex space-x-4">
+                            <label>
+                                <input type="radio" name="sex" value="男" required
+                                    class="w-4 h-4 text-primary border-gray-300 focus:ring-primary">
+                                <span class="ml-2">男</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="sex" value="女" required
+                                    class="w-4 h-4 text-primary border-gray-300 focus:ring-primary">
+                                <span class="ml-2">女</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="w-full" id="pregnancyGroup" style="display: none;">
+                        <div class="flex justify-between items-center">
+                            <span class="w-32">是否在妊娠期<span class="text-red-500">*</span></span>
+                            <div class="flex space-x-4">
+                                <label class="flex items-center">
+                                    <input type="radio" name="isPregnancy" value="是"
+                                        class="w-4 h-4 text-primary border-gray-300 focus:ring-primary">
+                                    <span class="ml-2">是</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="isPregnancy" value="否"
+                                        class="w-4 h-4 text-primary border-gray-300 focus:ring-primary">
+                                    <span class="ml-2">否</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="w-32">身高 (cm) :<span class="text-red-500">*</span></span>
+                        <input name="height" type="number" width="60" required
+                            class="border border-gray-300 rounded-button px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                            placeholder="请输入">
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="w-32">体重 (kg) :<span class="text-red-500">*</span></span>
+                        <input name="weight" type="number" width="60" required
+                            class="border border-gray-300 rounded-button px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                            placeholder="请输入">
+                    </div>
+                </div>
+            </div>
+            <div class="border-b pb-8 card">
+                <h2 class="text-xl font-semibold text-black mb-6 flex items-center">
+                    其他信息
+                </h2>
+                <div class="grid gap-6 md:grid-cols-2">
+
+                    <div class="flex items-center justify-between">
+                        <span class="w-32">腰围 (cm) :</span>
+                        <input name="waistline" type="number" width="60"
+                            class="border border-gray-300 rounded-button px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                            placeholder="请输入">
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="w-32">收缩压 (mmHg) :</span>
+                        <input name="systolicPressure" type="number" width="60"
+                            class="border border-gray-300 rounded-button px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                            placeholder="请输入">
+                    </div>
+                    <div class="form-group">
+                        <span class="w-32">家族病史 :</span>
+
+                        <div>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="familyHistory" value="高血压"
+                                    class="w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary">
+                                <span class="ml-2">高血压</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="familyHistory" value="糖尿病"
+                                    class="w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary">
+                                <span class="ml-2">糖尿病</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="familyHistory" value="心脏病"
+                                    class="w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary">
+                                <span class="ml-2">心脏病</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="familyHistory" value="other"
+                                    class="w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary">
+                                <input id="otherInput" type="text" placeholder="其他病史"
+                                    class="border border-gray-300 rounded-button px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent w-32">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pt-6 text-center">
+            <button type="submit"
+                class="bg-black text-white px-8 py-3 rounded-button transition-all duration-200 whitespace-nowrap shadow-lg hover:-translate-y-0.5">
+                <i class="fas fa-paper-plane mr-2"></i>
+                提交信息
+            </button>
+        </div>
+    </form>
+</body>
+
+</html>

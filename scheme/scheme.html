@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>糖尿病方案定制</title>
+    <script src="/js/tailwindcss.js"></script>
+    <script src="/js/api.js"></script>
+    <script src="/js/user.js"></script>
+    <script src="/js/sweetalert2.all.min.js"></script>
+    <script src="/js/showAlert.js"></script>
+    <script src="/js/loading.js"></script>
+    <script src="js/scheme.js"></script>
+    <link rel="stylesheet" href="/css/loading.css">
+
+    <link rel="stylesheet" href="css/scheme.css">
+    <link rel="stylesheet" href="/css/all.min.css">
+</head>
+
+<body class="w-full max-w-screen-sm mx-auto bg-white min-h-screen">
+    <nav class="sticky top-0 w-full bg-white shadow-sm z-50 px-4 h-14 flex items-center justify-between safe-top">
+        <button class="flex items-center !rounded-button">
+            <i class="fas fa-arrow-left text-gray-600"></i>
+        </button>
+        <h1 class="text-lg font-bold">生活方案</h1>
+        <button class="flex items-center !rounded-button text-primary" onclick="adjustmentScheme()"
+            style="color:#3261FF ;">
+            调整方案
+        </button>
+    </nav>
+    <main class="pt-4 pb-24 px-4 safe-top safe-bottom">
+        <div class="space-y-4">
+
+            <div class="flex items-center justify-between main_item">
+                <div class="flex items-center">
+                    <div>
+                        <h3 class="text-base sm:text-lg font-medium">饮食管理</h3>
+                        <p class="text-sm sm:text-base">定制专属饮食计划</p>
+                    </div>
+                </div>
+                <button id="eatBtn" class="px-4 py-1 text-xs bg-primary text-white rounded-button btn"
+                    onclick="checkIn('饮食')">
+                    打卡
+                </button>
+            </div>
+            <div class="space-y-2" id="eat">
+            </div>
+            <div class="flex items-center justify-between main_item">
+                <div class="flex items-center">
+                    <div>
+                        <h3 class="text-base sm:text-lg font-medium">运动管理</h3>
+                        <p class="text-sm sm:text-base">科学运动指导</p>
+                    </div>
+                </div>
+                <button id="sportBtn" class="px-4 py-1 text-xs bg-primary text-white rounded-button btn"
+                    onclick="checkIn('运动')">
+                    打卡
+                </button>
+            </div>
+            <div class="space-y-2" id="sport">
+            </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI助手</title>
+    <script src="/js/tailwindcss.js"></script>
+    <script src="js/aiStart.js"></script>
+    <link rel="stylesheet" href="/css/all.min.css">
+    <link rel="stylesheet" href="css/aiStart.css">
+</head>
+
+<body class="bg-gradient-to-br from-blue-50 to-purple-50 min-h-screen">
+    <nav class="fixed top-0 left-0 right-0 bg-white shadow-sm z-10">
+        <div class="flex items-center justify-between px-4 py-3">
+            <button class="text-gray-600">
+            </button>
+            <h1 class="text-lg font-semibold text-gray-800">AI助手</h1>
+            <div class="w-6"></div>
+        </div>
+    </nav>
+    <main class="pt-16 pb-24 px-4">
+        <div class="flex flex-col items-center top-bg">
+            <img src="/img/aichat_logo.png" class="items-center" width="100"/>
+
+            <h2 class="text-xl font-medium mb-2">AI智能助手</h2>
+            <p class="text-center">您的智能生活伴侣，随时随地为您提供帮助</p>
+        </div>
+        <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
+            <h3 class="text-lg font-semibold text-gray-800 mb-4">核心功能</h3>
+            <div class="space-y-4">
+                <div class="flex items-start">
+                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                        <img src="/img/aichat_ic1.png" width="24">
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-gray-800">糖尿病信息问答</h4>
+                        <p class="text-gray-500 text-sm">通过DeepSeek模型帮助了解糖尿病相关信息</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center mr-3">
+                        <img src="/img/aichat_ic2.png" width="24">
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-gray-800">糖尿病风险预测</h4>
+                        <p class="text-gray-500 text-sm">基于健康数据预测患病风险</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                        <img src="/img/aichat_ic3.png" width="24">
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-gray-800">生活方案生成</h4>
+                        <p class="text-gray-500 text-sm">个性化饮食和运动计划</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <div class="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center mr-3">
+                        <img src="/img/aichat_ic4.png" width="24">
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-gray-800">个人信息管理</h4>
+                        <p class="text-gray-500 text-sm">记录和追踪健康指标数据</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+        <button
+            class="flex justify-center items-center mx-auto px-8 py-3 bg-[#304FFF] text-white btn font-medium shadow-md hover:opacity-90 transition-opacity "
+            onclick="top.location.href='userAI.html'"
+            >
+            立即体验 AI 助手
+        </button>
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>糖尿病情况</title>
+    <script src="/js/tailwindcss.js"></script>
+    <link rel="stylesheet" href="/css/all.min.css">
+    <script src="js/diabetesinfo.js"></script>
+    <link rel="stylesheet" href="css/diabetesinfo.css">
+
+</head>
+
+<body class="bg-[#F3F8FC] w-full min-h-screen">
+    <nav
+        class="fixed top-0 w-full bg-white text-black border-b border-gray-200 shadow-md px-4 py-4 flex items-center z-50">
+        <button class="text-black">
+            <i class="fas fa-arrow-left text-xl w-6 h-6 flex items-center justify-center"></i>
+        </button>
+        <h1 class="text-black text-xl font-bold flex-1 text-center">糖尿病情况</h1>
+        <div class="w-6"></div>
+    </nav>
+
+    <main class="pt-16 pb-24 px-4 max-w-screen-sm mx-auto">
+        <!-- 卡片格式选择是否患糖尿病 -->
+        <div class="bg-white rounded-lg shadow-md p-4 mt-4">
+            <div class="flex items-center justify-between">
+                <span class="text-gray-500 w-100">您是否患有糖尿病？</span>
+                <!-- 下拉菜单 -->
+                <div class="relative flex items-center">
+                    <select id="diabetesStatus" class="bg-transparent appearance-none pr-6 py-2 focus:outline-none">
+                        <option value="yes">是</option>
+                        <option value="no">否</option>
+                    </select>
+                    <div class="absolute right-0 pointer-events-none">
+                        <i class="fas fa-chevron-right text-gray-400"></i>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-4 mt-4">
+            <h3 class="text-xl font-bold text-gray-800 mb-6">请选择糖尿病类型</h3>
+            <div class="border-b border-dashed border-gray-300 mb-4 mt-2"></div>
+            <div class="space-y-4">
+                <button
+                    class="w-full flex items-center p-4 bg-white border border-gray-200 !rounded-button hover:border-third group">
+                    <div class="w-12 h-12 bg-secondary/10 !rounded-button flex items-center justify-center mr-4">
+                        <img src="/img/tnb1.png" />
+                    </div>
+                    <div class="flex-1 text-left">
+                        <p class="text-gray-800 font-medium group-hover:text-primary">1型糖尿病</p>
+                        <p class="text-sm text-gray-500 mt-1">胰岛素依赖型</p>
+                    </div>
+                    <i class="fas fa-chevron-right text-gray-400 group-hover:text-primary"></i>
+                </button>
+
+                <button
+                    class="w-full flex items-center p-4 bg-white border border-gray-200 !rounded-button hover:border-third group">
+                    <div class="w-12 h-12 bg-secondary/10 !rounded-button flex items-center justify-center mr-4">
+                        <img src="/img/tnb2.png" />
+                    </div>
+                    <div class="flex-1 text-left">
+                        <p class="text-gray-800 font-medium group-hover:text-primary">2型糖尿病</p>
+                        <p class="text-sm text-gray-500 mt-1">非胰岛素依赖型</p>
+                    </div>
+                    <i class="fas fa-chevron-right text-gray-400 group-hover:text-primary"></i>
+                </button>
+
+                <button
+                    class="w-full flex items-center p-4 bg-white border border-gray-200 !rounded-button hover:border-third group">
+                    <div class="w-12 h-12 bg-secondary/10 !rounded-button flex items-center justify-center mr-4">
+                        <img src="/img/tnb3.png" />
+                    </div>
+                    <div class="flex-1 text-left">
+                        <p class="text-gray-800 font-medium group-hover:text-primary">妊娠糖尿病</p>
+                        <p class="text-sm text-gray-500 mt-1">孕期发生</p>
+                    </div>
+                    <i class="fas fa-chevron-right text-gray-400 group-hover:text-primary"></i>
+                </button>
+
+                <button
+                    class="w-full flex items-center p-4 bg-white border border-gray-200 !rounded-button hover:border-third group">
+                    <div class="w-12 h-12 bg-secondary/10 !rounded-button flex items-center justify-center mr-4">
+                        <img src="/img/tnb4.png" />
+                    </div>
+                    <div class="flex-1 text-left">
+                        <p class="text-gray-800 font-medium group-hover:text-primary">其他类型</p>
+                        <p class="text-sm text-gray-500 mt-1">特殊类型</p>
+                    </div>
+                    <i class="fas fa-chevron-right text-gray-400 group-hover:text-primary"></i>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <div class="flex justify-center mb-6 mt-4">
+        <button id="nextBtn" 
+        class="w-3/4 py-4 bg-[#304FFF] text-white font-bold rounded-[60px] hover:bg-[#304FFF]/90 transition-colors shadow-lg">
+        下一步
+        </button>
+    </div>
+</body>
+
+</html>

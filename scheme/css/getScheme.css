@@ -1,0 +1,24 @@
+html {
+    font-size: 16px;
+}
+
+@media (max-width: 640px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+select {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+select::after {
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+.card {
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    
+}

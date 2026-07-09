@@ -1,0 +1,20 @@
+.top-bg{
+    background-image: url('/img/aichat_bg.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px 10px 0px 0px;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px
+}
+
+.btn {
+    border-radius: 24px;
+    margin-bottom: 140px;
+}
+
+i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

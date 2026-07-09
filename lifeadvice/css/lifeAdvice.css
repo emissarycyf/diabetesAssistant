@@ -1,0 +1,5 @@
+.card {
+    background-image: url('/img/la_bg.png');
+    background-size: cover;
+    background-position: center;
+}
